@@ -10,7 +10,7 @@ it('can get user me', function () {
     expect($response)->toBeArray();
     expect($response['body']->first_name)->toEqual('Test');
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can get all orders', function () {
     $mockClient = mockClient('orders');
@@ -20,7 +20,7 @@ it('can get all orders', function () {
     expect($response)->toBeArray();
     expect($response['body']->results[0]->status)->toEqual('paid');
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can get order', function () {
     $mockClient = mockClient('order');
@@ -30,7 +30,7 @@ it('can get order', function () {
     expect($response)->toBeArray();
     expect($response['body']->id)->toEqual(2000003508897196);
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can get shipment', function () {
     $mockClient = mockClient('shipment');
@@ -40,7 +40,7 @@ it('can get shipment', function () {
     expect($response)->toBeArray();
     expect($response['body']->id)->toEqual(1234567889);
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can get raw', function () {
     $mockClient = mockClient('shipment');
@@ -50,7 +50,7 @@ it('can get raw', function () {
     expect($response)->toBeArray();
     expect($response['body']->id)->toEqual(1234567889);
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can post', function () {
     $mockClient = mockClient([
@@ -64,7 +64,7 @@ it('can post', function () {
     expect($response)->toBeArray();
     expect($response['body']->user_id)->toEqual(123456);
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can delete', function () {
     $mockClient = mockClient([
@@ -76,7 +76,7 @@ it('can delete', function () {
     expect($response)->toBeArray();
     expect($response['body']->user_id)->toEqual(3123456);
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
 
 it('can get payment', function () {
     $mockClient = mockClient([
@@ -90,4 +90,4 @@ it('can get payment', function () {
     expect($response['body']->id)->toEqual(1234567890);
     expect($response['body']->status)->toEqual('approved');
     expect($response['httpCode'])->toEqual(200);
-})->only();
+});
