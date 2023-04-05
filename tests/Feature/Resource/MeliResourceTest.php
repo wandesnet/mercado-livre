@@ -9,7 +9,7 @@ it('can get user me', function () {
         MockResponse::make(['name' => 'Wandes'], 200),
     ]);
 
-    $response = Meli::make()->request()->setMock($mockClient)->me(12332);
+    $response = Meli::make()->withMockClient($mockClient)->request()->me(12332);
 
     expect($response)->toBeArray();
     expect($response['body']->name)->toEqual('Wandes');
