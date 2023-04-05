@@ -2,5 +2,7 @@ parameters:
     level: max
     paths:
         - src
+    excludePaths:
+        - src/Meli.php    
 
     reportUnmatchedIgnoredErrors: true

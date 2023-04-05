@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WandesCardoso\MercadoLivre\Resource;
 
+use Saloon\Contracts\MockClient;
 use WandesCardoso\MercadoLivre\Request\PutRequest;
 use WandesCardoso\MercadoLivre\Request\PostRequest;
 use WandesCardoso\MercadoLivre\Request\DeleteRequest;
@@ -16,10 +17,17 @@ use WandesCardoso\MercadoLivre\Request\GetShipmentRequest;
 
 class MeliResource extends Resource
 {
+    public function setMock(MockClient $mockClient = null): MeliResource
+    {
+        $this->mockClient = $mockClient;
+
+        return $this;
+    }
+
     /** @return array <string, mixed> */
     public function me(?string $user_id = null): array
     {
-        $response = $this->connector->send(new GetUserMeRequest($user_id));
+        $response = $this->connector->send(new GetUserMeRequest($user_id), $this->getMock());
 
         return [
             'body' => $response->object(),
@@ -33,7 +41,7 @@ class MeliResource extends Resource
      */
     public function orders(int $seller_id, int $page = 0, int $perPage = 50, array $params = [], string $label = 'recent', string $sort = 'date_desc'): array
     {
-        $response = $this->connector->send(new GetOrdersRequest($seller_id, $page, $perPage, $params, $label, $sort));
+        $response = $this->connector->send(new GetOrdersRequest($seller_id, $page, $perPage, $params, $label, $sort), $this->getMock());
 
         return [
             'body' => $response->object(),
@@ -44,7 +52,7 @@ class MeliResource extends Resource
      /** @return array <string, mixed> */
     public function order(int $order_id): array
     {
-        $response = $this->connector->send(new GetOrderRequest($order_id));
+        $response = $this->connector->send(new GetOrderRequest($order_id), $this->getMock());
 
         return [
             'body' => $response->object(),
@@ -55,7 +63,7 @@ class MeliResource extends Resource
      /** @return array <string, mixed> */
     public function shipment(int $shipment_id): array
     {
-        $response = $this->connector->send(new GetShipmentRequest($shipment_id));
+        $response = $this->connector->send(new GetShipmentRequest($shipment_id), $this->getMock());
 
         return [
             'body' => $response->object(),
@@ -69,7 +77,7 @@ class MeliResource extends Resource
      * */
     public function raw(string $uri, $params = []): array
     {
-        $response = $this->connector->send(new GetRawRequest($uri, $params));
+        $response = $this->connector->send(new GetRawRequest($uri, $params), $this->getMock());
 
         return [
             'body' => json_decode($response->body()),
@@ -83,7 +91,7 @@ class MeliResource extends Resource
       * */
     public function post(string $uri, array $data): array
     {
-        $response = $this->connector->send(new PostRequest($uri, $data));
+        $response = $this->connector->send(new PostRequest($uri, $data), $this->getMock());
 
         return [
             'body' => json_decode($response->body()),
@@ -97,7 +105,7 @@ class MeliResource extends Resource
      * */
     public function put(string $uri, array $data): array
     {
-        $response = $this->connector->send(new PutRequest($uri, $data));
+        $response = $this->connector->send(new PutRequest($uri, $data), $this->getMock());
 
         return [
             'body' => json_decode($response->body()),
@@ -108,7 +116,7 @@ class MeliResource extends Resource
      /** @return array <string, mixed> */
     public function delete(string $uri): array
     {
-        $response = $this->connector->send(new DeleteRequest($uri));
+        $response = $this->connector->send(new DeleteRequest($uri), $this->getMock());
 
         return [
             'body' => json_decode($response->body()),
@@ -119,7 +127,7 @@ class MeliResource extends Resource
     /** @return array <string, mixed> */
     public function payment(int $pay_id): array
     {
-        $response = $this->connector->send(new GetPaymentRequest($pay_id));
+        $response = $this->connector->send(new GetPaymentRequest($pay_id), $this->getMock());
 
         return [
             'body' => json_decode($response->body()),
