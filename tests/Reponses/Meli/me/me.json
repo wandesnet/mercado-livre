@@ -1,0 +1,128 @@
+{
+    "id": 202593498,
+    "nickname": "TETE2870021",
+    "registration_date": "2016-01-06T11:31:42.000-04:00",
+    "first_name": "Test",
+    "last_name": "Test",
+    "country_id": "AR",
+    "email": "test_user_50698062@testuser.com",
+    "identification": {
+    "type": "DNI",
+    "number": "1111111"
+    },
+    "address": {
+    "state": "AR-C",
+    "city": "Palermo",
+    "address": "Test Address 123",
+    "zip_code": "1414"
+    },
+    "phone": {
+    "area_code": "01",
+    "number": "1111-1111",
+    "extension": "",
+    "verified": false
+    },
+    "alternative_phone": {
+    "area_code": "",
+    "number": "",
+    "extension": ""
+    },
+    "user_type": "real_estate_agency",
+    "tags": [
+    "real_estate_agency",
+    "test_user",
+    "user_info_verified"
+    ],
+    "logo": null,
+    "points": 100,
+    "site_id": "MLA",
+    "permalink": "http://perfil.mercadolibre.com.ar/TETE2870021",
+    "seller_experience": "ADVANCED",
+    "seller_reputation": {
+    "level_id": null,
+    "power_seller_status": null,
+    "transactions": {
+      "period": "historic",
+      "total": 0,
+      "completed": 0,
+      "canceled": 0,
+      "ratings": {
+        "positive": 0,
+        "negative": 0,
+        "neutral": 0
+      }
+    }
+    },
+    "buyer_reputation": {
+    "canceled_transactions": 0,
+    "transactions": {
+      "period": "historic",
+      "total": null,
+      "completed": null,
+      "canceled": {
+        "total": null,
+        "paid": null
+      },
+      "unrated": {
+        "total": null,
+        "paid": null
+      },
+      "not_yet_rated": {
+        "total": null,
+        "paid": null,
+        "units": null
+      }
+    },
+    "tags": [
+    ]
+    },
+    "status": {
+    "site_status": "active",
+    "list": {
+      "allow": true,
+      "codes": [
+      ],
+      "immediate_payment": {
+        "required": false,
+        "reasons": [
+        ]
+      }
+    },
+    "buy": {
+      "allow": true,
+      "codes": [
+      ],
+      "immediate_payment": {
+        "required": false,
+        "reasons": [
+       ]
+      }
+    },
+    "sell": {
+      "allow": true,
+      "codes": [
+      ],
+      "immediate_payment": {
+        "required": false,
+        "reasons": [
+        ]
+      }
+    },
+    "billing": {
+      "allow": true,
+      "codes": [
+      ]
+    },
+    "mercadopago_tc_accepted": true,
+    "mercadopago_account_type": "personal",
+    "mercadoenvios": "not_accepted",
+    "immediate_payment": false,
+    "confirmed_email": false,
+    "user_type": "eventual",
+    "required_action": ""
+    },
+    "credit": {
+    "consumed": 100,
+    "credit_level_id": "MLA1"
+    }
+  }  

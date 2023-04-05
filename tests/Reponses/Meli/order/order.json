@@ -1,0 +1,145 @@
+{
+    "id": 2000003508897196,
+    "date_created": "2022-04-08T17:01:30.000-04:00",
+    "date_closed": "2022-04-08T17:01:33.000-04:00",
+    "last_updated": "2022-04-08T17:03:32.000-04:00",
+    "manufacturing_ending_date": null,
+    "comment": null,
+    "pack_id": 2000003508553677,
+    "pickup_id": null,
+    "order_request": {
+        "return": null,
+        "change": null
+    },
+    "fulfilled": null,
+    "mediations": [],
+    "total_amount": 50,
+    "paid_amount": 50,
+    "coupon": {
+        "id": null,
+        "amount": 0
+    },
+    "expiration_date": "2022-05-06T17:01:33.000-04:00",
+    "order_items": [
+        {
+            "item": {
+                "id": "MLB2608564035",
+                "title": "Camiseta Basica",
+                "category_id": "MLB31447",
+                "variation_id": 174390848694,
+                "seller_custom_field": null,
+                "variation_attributes": [
+                    {
+                        "id": "SIZE",
+                        "name": "Tamanho",
+                        "value_id": "2282666",
+                        "value_name": "M"
+                    },
+                    {
+                        "id": "COLOR",
+                        "name": "Cor",
+                        "value_id": "52049",
+                        "value_name": "Preto"
+                    }
+                ],
+                "warranty": "Sem garantia",
+                "condition": "new",
+                "seller_sku": null,
+                "global_price": null,
+                "net_weight": null
+            },
+            "quantity": 1,
+            "requested_quantity": {
+                "value": 1,
+                "measure": "unit"
+            },
+            "picked_quantity": null,
+            "unit_price": 50,
+            "full_unit_price": 50,
+            "currency_id": "BRL",
+            "manufacturing_days": null,
+            "sale_fee": 12,
+            "listing_type_id": "gold_special"
+        }
+    ],
+    "currency_id": "BRL",
+    "payments": [
+        {
+            "id": 21463688923,
+            "order_id": 2000003508897196,
+            "payer_id": 266272126,
+            "collector": {
+                "id": 478055419
+            },
+            "card_id": null,
+            "site_id": "MLB",
+            "reason": "Camiseta Basica",
+            "payment_method_id": "account_money",
+            "currency_id": "BRL",
+            "installments": 1,
+            "issuer_id": null,
+            "atm_transfer_reference": {
+                "company_id": null,
+                "transaction_id": null
+            },
+            "coupon_id": null,
+            "activation_uri": null,
+            "operation_type": "regular_payment",
+            "payment_type": "account_money",
+            "available_actions": [
+                "refund"
+            ],
+            "status": "approved",
+            "status_code": null,
+            "status_detail": "accredited",
+            "transaction_amount": 50,
+            "transaction_amount_refunded": 0,
+            "taxes_amount": 0,
+            "shipping_cost": 0,
+            "coupon_amount": 0,
+            "overpaid_amount": 0,
+            "total_paid_amount": 50,
+            "installment_amount": null,
+            "deferred_period": null,
+            "date_approved": "2022-04-08T17:01:32.000-04:00",
+            "authorization_code": null,
+            "transaction_order_id": null,
+            "date_created": "2022-04-08T17:01:32.000-04:00",
+            "date_last_modified": "2022-04-08T17:01:44.000-04:00"
+        }
+    ],
+    "shipping": {
+        "id": 41297142475
+    },
+    "status": "paid",
+    "status_detail": null,
+    "tags": [
+        "test_order",
+        "not_delivered",
+        "pack_order",
+        "paid"
+    ],
+    "feedback": {
+        "buyer": null,
+        "seller": null
+    },
+    "context": {
+        "channel": "marketplace",
+        "site": "MLB",
+        "flows": []
+    },
+    "buyer": {
+        "id": 266272126,
+        "nickname": "TETE8127263",
+        "first_name": "Test",
+        "last_name": "Test"
+    },
+    "seller": {
+        "id": 478055419
+    },
+    "taxes": {
+        "amount": null,
+        "currency_id": null,
+        "id": null
+    }
+ } 

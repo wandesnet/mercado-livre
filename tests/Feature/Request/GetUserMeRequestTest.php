@@ -1,16 +1,12 @@
 <?php
 
-use Saloon\Http\Faking\MockClient;
-use Saloon\Http\Faking\MockResponse;
 use WandesCardoso\MercadoLivre\Meli;
 use WandesCardoso\MercadoLivre\Request\GetUserMeRequest;
 use Saloon\Contracts\Request;
 use Saloon\Contracts\Response;
 
-it('request get user me', function () {
-    $mockClient = new MockClient([
-        MockResponse::make(['name' => 'Wandes'], 200),
-    ]);
+it('can request get user me', function () {
+    $mockClient = mockClient(['name' => 'Wandes']);
 
     $response = Meli::make()->send(new GetUserMeRequest(12332), $mockClient);
 

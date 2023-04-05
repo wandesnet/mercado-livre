@@ -1,0 +1,155 @@
+{
+    "id": 1234567889,
+    "external_reference": "string",
+     "status": "string",
+    "substatus": "string",
+    "date_created": "string",
+    "last_updated": "string",
+    "declared_value": 0,
+    "dimensions": {
+      "height": 0,
+      "width": 0,
+      "length": 0,
+      "weight": 0
+    },
+    "logistic": {
+      "direction": "forward",
+      "mode": "me2",
+      "type": "drop_off"
+    },
+    "source": {
+      "site_id": "MLM",
+      "market_place": "MELI",
+      "application_id": null
+    },
+    "tracking_number": "string",
+    "origin": {
+      "type": "selling_address",
+      "sender_id": 0,
+      "shipping_address": {
+        "id": 0,
+        "address_id": 0,
+        "address_line": "string",
+        "street_name": "string",
+        "street_number": 0,
+        "comment": "string",
+        "zip_code": "string",
+        "city": {
+          "id": "string",
+          "name": "string"
+        },
+        "state": {
+          "id": "string",
+          "name": "string"
+        },
+        "country": {
+          "id": "string",
+          "name": "string"
+        },
+        "neighborhood": {
+          "id": "string",
+          "name": "string"
+        },
+        "municipality": {
+          "id": "string",
+          "name": "string"
+        },
+        "types": {
+          "default_buying_address": 0
+        },
+        "agency": {
+          "carrier_id": 0,
+          "agency_id": "string",
+          "description": "string",
+          "phone": "string",
+          "open_hours": "string"
+        },
+        "latitude": 0,
+        "longitude": 0,
+        "geolocation_type": "string",
+        "is_valid_for_carrier": true
+      }
+    },
+    "destination": {
+      "type": "buying_address",
+      "receiver_id": 0,
+      "receiver_name": "string",
+      "receiver_phone": "string",
+      "comments": "string",
+      "shipping_address": {
+        "id": 0,
+        "address_id": 0,
+        "address_line": "string",
+        "street_name": "string",
+        "street_number": 0,
+        "comment": "string",
+        "zip_code": "string",
+        "city": {
+          "id": "string",
+          "name": "string"
+        },
+        "state": {
+          "id": "string",
+          "name": "string"
+        },
+        "country": {
+          "id": "string",
+          "name": "string"
+        },
+        "neighborhood": {
+          "id": "string",
+          "name": "string"
+        },
+        "municipality": {
+          "id": "string",
+          "name": "string"
+        },
+        "types": {
+          "default_buying_address": 0
+        },
+        "agency": {
+          "carrier_id": 0,
+          "agency_id": "string",
+          "description": "string",
+          "phone": "string",
+          "open_hours": "string"
+        },
+        "latitude": 0,
+        "longitude": 0,
+        "geolocation_type": "string",
+        "is_valid_for_carrier": true
+      }
+    },
+    "lead_time": {
+      "option_id": 0,
+      "shipping_method": {
+        "id": 0,
+        "type": "standard",
+        "name": "string",
+        "deliver_to": "address"
+      },
+      "currency_id": "string",
+      "cost": 0,
+      "cost_type": "charged",
+      "service_id": 0,
+      "estimated_delivery_time": {
+        "type": "known",
+        "date": "string",
+        "shipping": 0,
+        "handling": 0,
+        "unit": "string",
+        "offset": {
+          "date": "string",
+          "shipping": 0
+        },
+        "time_frame": {
+          "from": 0,
+          "to": 0
+        },
+        "pay_before": "string"
+      }
+    },
+    "tags": [
+      "string"
+    ]
+  }

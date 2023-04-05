@@ -1,5 +1,9 @@
 <?php
 
+use Saloon\Http\Faking\MockClient;
+use Saloon\Helpers\MockConfig;
+use Saloon\Http\Faking\MockResponse;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -42,4 +46,24 @@ expect()->extend('toBeOne', function () {
 function something()
 {
     // ..
+}
+
+function mockClientFixture(string $mock): MockClient
+{
+    MockConfig::setFixturePath(__DIR__ . '/Fixtures/Meli');
+
+    return new MockClient([
+        MockResponse::fixture($mock),
+    ]);
+}
+
+function mockClient(string|array $mock, int $status = 200): MockClient
+{
+    if (is_string($mock)) {
+        $mock = json_decode(file_get_contents(__DIR__ . '/Reponses/Meli/' . $mock . '/' . $mock . '.json'), true);
+    }
+
+    return new MockClient([
+        MockResponse::make($mock, $status),
+    ]);
 }
