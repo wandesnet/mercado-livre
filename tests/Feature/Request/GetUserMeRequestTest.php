@@ -12,9 +12,7 @@ it('request get user me', function () {
         MockResponse::make(['name' => 'Wandes'], 200),
     ]);
 
-    $meli = new Meli();
-
-    $response = $meli->send(new GetUserMeRequest(12332), $mockClient);
+    $response = Meli::make()->send(new GetUserMeRequest(12332), $mockClient);
 
     $mockClient->assertSent(GetUserMeRequest::class);
 
