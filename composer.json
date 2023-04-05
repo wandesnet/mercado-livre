@@ -1,7 +1,7 @@
 {
     "name": "wandesnet/mercado-livre",
-    "description": "SDK for integration with api Mercado Livre",
-    "keywords": ["php", "mercado livre", "SDK Mercado Livre"],
+    "description": "PHP SDK for integration with Mercado Livre",
+    "keywords": ["php", "mercado livre", "SDK Mercado Livre", "Mercado Livre SDK", "Mercado Livre API", "Mercado Livre PHP", "Mercado Livre PHP SDK", "Mercado Livre SDK PHP"],
     "license": "MIT",
     "authors": [
         {
