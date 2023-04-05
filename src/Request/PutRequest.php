@@ -25,9 +25,7 @@ class PutRequest extends Request implements HasBody
         return $this->uri;
     }
 
-    /**
-     * @return array<string, mixed>
-     */
+    /** @return array<string, mixed> */
     protected function defaultBody(): array
     {
         return $this->data;

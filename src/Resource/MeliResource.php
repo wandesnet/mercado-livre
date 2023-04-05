@@ -11,6 +11,7 @@ use WandesCardoso\MercadoLivre\Request\GetRawRequest;
 use WandesCardoso\MercadoLivre\Request\GetOrderRequest;
 use WandesCardoso\MercadoLivre\Request\GetOrdersRequest;
 use WandesCardoso\MercadoLivre\Request\GetUserMeRequest;
+use WandesCardoso\MercadoLivre\Request\GetPaymentRequest;
 use WandesCardoso\MercadoLivre\Request\GetShipmentRequest;
 
 class MeliResource extends Resource
@@ -104,12 +105,21 @@ class MeliResource extends Resource
         ];
     }
 
-     /**
-     * @return array <string, mixed>
-     * */
+     /** @return array <string, mixed> */
     public function delete(string $uri): array
     {
         $response = $this->connector->send(new DeleteRequest($uri));
+
+        return [
+            'body' => json_decode($response->body()),
+            'httpCode' => $response->status(),
+        ];
+    }
+
+    /** @return array <string, mixed> */
+    public function payment(int $pay_id): array
+    {
+        $response = $this->connector->send(new GetPaymentRequest($pay_id));
 
         return [
             'body' => json_decode($response->body()),
