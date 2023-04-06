@@ -72,5 +72,5 @@ var_dump($authenticator->getAccessToken(), $authenticator->getRefreshToken(), $a
 
 ## Tests
 
-./vendor/bin/pest
+    ./vendor/bin/pest
 
