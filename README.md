@@ -8,7 +8,7 @@ This integration package with Mercado Livre (not the official one)
 
 ## Installation
 
-    composer require wandesnet/mercado-livre:"^1.0"
+    composer require wandesnet/mercado-livre
 
 ## Usage
 
