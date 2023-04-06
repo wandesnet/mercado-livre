@@ -4,7 +4,7 @@ This integration package with Mercado Livre (not the official one)
 
 ## Required
 
-- **PHP 8.0+**
+- **PHP 8.1+**
 
 ## Installation
 
