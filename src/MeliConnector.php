@@ -15,7 +15,7 @@ abstract class MeliConnector extends Connector
     use MeliRequestTrait;
     use MeliAuthRequestTrait;
 
-    public function __construct(protected ?string $access_token = null, protected ?string $refresh_token = null, protected ?int $expires_in = null)
+    public function __construct(protected ?string $access_token = null, protected ?string $refresh_token = null, protected ?int $expires_in = null, protected mixed $data = null )
     {
         $this->refreshTokenExpireIn();
     }
@@ -33,5 +33,10 @@ abstract class MeliConnector extends Connector
     protected function hasExpired(): bool
     {
         return isset($this->access_token, $this->refresh_token, $this->expires_in) && $this->accessTokenAuthenticator()->hasExpired();
+    }
+
+    protected function getData(): mixed
+    {
+        return $this->data;
     }
 }
