@@ -42,10 +42,10 @@ it('can get shipment', function () {
     expect($response['httpCode'])->toEqual(200);
 });
 
-it('can get raw', function () {
+it('can get', function () {
     $mockClient = mockClient('shipment');
 
-    $response = Meli::make()->withMockClient($mockClient)->request()->raw('shipments/1234567889/costs');
+    $response = Meli::make()->withMockClient($mockClient)->request()->get('shipments/1234567889/costs');
 
     expect($response)->toBeArray();
     expect($response['body']->id)->toEqual(1234567889);

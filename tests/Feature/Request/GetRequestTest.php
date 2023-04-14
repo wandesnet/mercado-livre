@@ -3,14 +3,14 @@
 use Saloon\Contracts\Request;
 use Saloon\Contracts\Response;
 use WandesCardoso\MercadoLivre\Meli;
-use WandesCardoso\MercadoLivre\Request\GetRawRequest;
+use WandesCardoso\MercadoLivre\Request\GetRequest;
 
-it('can request raw', function () {
+it('can request get', function () {
     $mockClient = mockClient(['id' => 123456789]);
 
-    $response = Meli::make()->send(new GetRawRequest('collections/123456789', []), $mockClient);
+    $response = Meli::make()->send(new GetRequest('collections/123456789', []), $mockClient);
 
-    $mockClient->assertSent(GetRawRequest::class);
+    $mockClient->assertSent(GetRequest::class);
 
     $mockClient->assertSent('collections/123456789');
 

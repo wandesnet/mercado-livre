@@ -43,7 +43,7 @@ final class Meli extends MeliConnector
 
             $this->access_token = $refresh->getAccessToken();
             $this->refresh_token = $refresh->getRefreshToken();
-            $this->expires_in = $refresh->getExpiresAt()->setTimezone(new \DateTimeZone($this->timeZone))->getTimestamp();
+            $this->expires_in = $refresh->getExpiresAt()->getTimestamp();
         }
     }
 }

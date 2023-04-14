@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace WandesCardoso\MercadoLivre\Resource;
 
+use WandesCardoso\MercadoLivre\Request\GetRequest;
 use WandesCardoso\MercadoLivre\Request\PutRequest;
 use WandesCardoso\MercadoLivre\Request\PostRequest;
 use WandesCardoso\MercadoLivre\Request\DeleteRequest;
-use WandesCardoso\MercadoLivre\Request\GetRawRequest;
 use WandesCardoso\MercadoLivre\Request\GetOrderRequest;
 use WandesCardoso\MercadoLivre\Request\GetOrdersRequest;
 use WandesCardoso\MercadoLivre\Request\GetUserMeRequest;
@@ -22,7 +22,7 @@ class MeliResource extends Resource
         $response = $this->connector->send(new GetUserMeRequest($user_id));
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -36,7 +36,7 @@ class MeliResource extends Resource
         $response = $this->connector->send(new GetOrdersRequest($seller_id, $page, $perPage, $params, $label, $sort));
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -47,7 +47,7 @@ class MeliResource extends Resource
         $response = $this->connector->send(new GetOrderRequest($order_id));
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -67,9 +67,9 @@ class MeliResource extends Resource
      * @param array<string, mixed> $params
      * @return array <string, mixed>
      * */
-    public function raw(string $uri, $params = []): array
+    public function get(string $uri, $params = []): array
     {
-        $response = $this->connector->send(new GetRawRequest($uri, $params));
+        $response = $this->connector->send(new GetRequest($uri, $params));
 
         return [
             'body' => json_decode($response->body()),

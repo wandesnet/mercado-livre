@@ -24,7 +24,6 @@ class GetOrdersRequest extends Request
     protected function defaultQuery(): array
     {
         return array_merge([
-            'page' => $this->page,
             'sort' => $this->sort,
             'offset' => $this->page * $this->perPage,
             'limit' => $this->perPage,

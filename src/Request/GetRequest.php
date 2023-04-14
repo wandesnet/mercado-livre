@@ -7,7 +7,7 @@ namespace WandesCardoso\MercadoLivre\Request;
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class GetRawRequest extends Request
+class GetRequest extends Request
 {
     protected Method $method = Method::GET;
 
