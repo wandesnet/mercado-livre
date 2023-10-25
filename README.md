@@ -21,6 +21,9 @@ Set `setClientId`, `setClientSecret`, `setRedirectUri` change the settings:
 ```php
 final class Meli extends MeliConnector
 {
+
+    public ?int $tries = 2; // default 1, try to request api 2 times if fail
+
     public function resolveBaseUrl(): string
     {
         return 'https://api.mercadolibre.com';
