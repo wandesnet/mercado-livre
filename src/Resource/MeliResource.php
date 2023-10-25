@@ -41,7 +41,7 @@ class MeliResource extends Resource
         ];
     }
 
-     /** @return array <string, mixed> */
+    /** @return array <string, mixed> */
     public function order(int $order_id): array
     {
         $response = $this->connector->send(new GetOrderRequest($order_id));
@@ -52,7 +52,7 @@ class MeliResource extends Resource
         ];
     }
 
-     /** @return array <string, mixed> */
+    /** @return array <string, mixed> */
     public function shipment(int $shipment_id): array
     {
         $response = $this->connector->send(new GetShipmentRequest($shipment_id));
@@ -77,10 +77,10 @@ class MeliResource extends Resource
         ];
     }
 
-     /**
-      * @param array<string, mixed> $data
-      * @return array <string, mixed>
-      * */
+    /**
+     * @param array<string, mixed> $data
+     * @return array <string, mixed>
+     * */
     public function post(string $uri, array $data): array
     {
         $response = $this->connector->send(new PostRequest($uri, $data));
@@ -105,7 +105,7 @@ class MeliResource extends Resource
         ];
     }
 
-     /** @return array <string, mixed> */
+    /** @return array <string, mixed> */
     public function delete(string $uri): array
     {
         $response = $this->connector->send(new DeleteRequest($uri));

@@ -2,8 +2,8 @@
 
 use WandesCardoso\MercadoLivre\Meli;
 use WandesCardoso\MercadoLivre\Request\GetUserMeRequest;
-use Saloon\Contracts\Request;
-use Saloon\Contracts\Response;
+use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 it('can request get user me', function () {
     $mockClient = mockClient(['name' => 'Wandes']);

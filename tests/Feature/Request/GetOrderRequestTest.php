@@ -2,8 +2,8 @@
 
 use WandesCardoso\MercadoLivre\Meli;
 use WandesCardoso\MercadoLivre\Request\GetOrderRequest;
-use Saloon\Contracts\Request;
-use Saloon\Contracts\Response;
+use Saloon\Http\Request;
+use Saloon\Http\Response;
 
 it('can request get order', function () {
     $mockClient = mockClient(['id' => 2000003508897196]);
