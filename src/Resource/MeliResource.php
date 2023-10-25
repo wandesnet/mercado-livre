@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace WandesCardoso\MercadoLivre\Resource;
 
 use Exception;
-use JsonException;
 use Throwable;
 use WandesCardoso\MercadoLivre\Request\GetRequest;
 use WandesCardoso\MercadoLivre\Request\PutRequest;
@@ -19,9 +18,7 @@ use WandesCardoso\MercadoLivre\Request\GetShipmentRequest;
 
 class MeliResource extends Resource
 {
-    /** @return array <string, mixed>
-     * @throws JsonException
-     */
+    /** @return array <string, mixed> */
     public function me(?string $user_id = null): array
     {
         try {
@@ -31,7 +28,7 @@ class MeliResource extends Resource
         }
 
             return [
-                'body' => $response->object(),
+                'body' => json_decode($response->body()),
                 'httpCode' => $response->status(),
             ];
 
@@ -41,7 +38,6 @@ class MeliResource extends Resource
      * @param  array<string, mixed>  $params
      *
      * @return array <string, mixed>
-     * @throws JsonException
      */
     public function orders(int $seller_id, int $page = 0, int $perPage = 50, array $params = [], string $label = 'recent', string $sort = 'date_desc'): array
     {
@@ -59,14 +55,12 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
 
-    /** @return array <string, mixed>
-     * @throws JsonException
-     */
+    /** @return array <string, mixed> */
     public function order(int $order_id): array
     {
         try {
@@ -76,14 +70,12 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
 
-    /** @return array <string, mixed>
-     * @throws JsonException
-     */
+    /** @return array <string, mixed> */
     public function shipment(int $shipment_id): array
     {
         try {
@@ -94,7 +86,7 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -102,7 +94,6 @@ class MeliResource extends Resource
     /**
      * @param  array<string, mixed>  $params
      * @return array <string, mixed>
-     * @throws JsonException
      */
     public function get(string $uri, array $params = []): array
     {
@@ -113,7 +104,7 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -121,7 +112,6 @@ class MeliResource extends Resource
     /**
      * @param  array<string, mixed>  $data
      * @return array <string, mixed>
-     * @throws JsonException
      */
     public function post(string $uri, array $data): array
     {
@@ -132,7 +122,7 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
@@ -140,7 +130,6 @@ class MeliResource extends Resource
     /**
      * @param  array<string, mixed>  $data
      * @return array <string, mixed>
-     * @throws JsonException
      */
     public function put(string $uri, array $data): array
     {
@@ -151,14 +140,12 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
 
-    /** @return array <string, mixed>
-     * @throws JsonException
-     */
+    /** @return array <string, mixed> */
     public function delete(string $uri): array
     {
         try {
@@ -168,14 +155,12 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
 
-    /** @return array <string, mixed>
-     * @throws JsonException
-     */
+    /** @return array <string, mixed> */
     public function payment(int $pay_id): array
     {
         try {
@@ -185,7 +170,7 @@ class MeliResource extends Resource
         }
 
         return [
-            'body' => $response->object(),
+            'body' => json_decode($response->body()),
             'httpCode' => $response->status(),
         ];
     }
