@@ -179,7 +179,7 @@ class MeliResource extends Resource
     protected function throwError(Throwable|Exception $e): array
     {
         return [
-            'body' => $e->getMessage(),
+            'body' => json_decode($e->getMessage()),
             'httpCode' => $e->getCode(),
         ];
     }

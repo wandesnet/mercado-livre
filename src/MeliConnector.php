@@ -8,12 +8,14 @@ use Saloon\Http\Connector;
 use Saloon\Traits\OAuth2\AuthorizationCodeGrant;
 use WandesCardoso\MercadoLivre\Traits\MeliRequestTrait;
 use WandesCardoso\MercadoLivre\Traits\MeliAuthRequestTrait;
+use WandesCardoso\MercadoLivre\Traits\MeliResponse;
 
 abstract class MeliConnector extends Connector
 {
     use AuthorizationCodeGrant;
     use MeliRequestTrait;
     use MeliAuthRequestTrait;
+    use MeliResponse;
 
     public function __construct(protected ?string $access_token = null, protected ?string $refresh_token = null, protected ?int $expires_in = null, protected mixed $data = null)
     {
